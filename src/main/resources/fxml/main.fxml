@@ -135,8 +135,11 @@
                     <Label text="Filtered" styleClass="stat-key-filtered" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
                     <Label fx:id="filteredPortsLabel" text="0" styleClass="stat-value-filtered" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
-                    <Label text="Duration" styleClass="stat-key" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-                    <Label fx:id="durationLabel" text="00:00:00" styleClass="stat-value" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                    <Label text="Errors" styleClass="stat-key-error" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <Label fx:id="errorPortsLabel" text="0" styleClass="stat-value-error" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                    <Label text="Duration" styleClass="stat-key" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                    <Label fx:id="durationLabel" text="00:00:00" styleClass="stat-value" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
                 </GridPane>
             </VBox>
         </ScrollPane>

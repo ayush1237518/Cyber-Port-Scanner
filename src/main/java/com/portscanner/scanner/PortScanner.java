@@ -71,11 +71,16 @@ public final class PortScanner {
         AppLogger.info("Starting scan of %s (ports %d-%d) with %d threads."
                 .formatted(config.getTarget(), config.getStartPort(), config.getEndPort(), config.getThreadCount()));
 
+        // Shared across every task in this scan so a host-unreachable condition
+        // (which affects every port identically) is only logged once, not once per port.
+        AtomicBoolean unreachableWarned = new AtomicBoolean(false);
+
         for (int port = config.getStartPort(); port <= config.getEndPort(); port++) {
             if (cancelled.get()) {
                 break;
             }
-            ScanTask task = new ScanTask(targetAddress, port, config.getTimeoutMillis(), config.isGrabBanners());
+            ScanTask task = new ScanTask(targetAddress, port, config.getTimeoutMillis(),
+                    config.isGrabBanners(), unreachableWarned);
             futures.add(executor.submit(task));
         }
 

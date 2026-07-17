@@ -16,6 +16,7 @@
     -fx-status-open: #22c55e;
     -fx-status-closed: #ef4444;
     -fx-status-filtered: #f59e0b;
+    -fx-status-error: #999999;
     -fx-font-family: "Consolas", "Segoe UI", monospace;
 }
 
@@ -208,6 +209,8 @@
 .stat-value-closed { -fx-font-size: 12px; -fx-text-fill: -fx-status-closed; -fx-font-weight: bold; }
 .stat-key-filtered { -fx-font-size: 11px; -fx-text-fill: -fx-status-filtered; }
 .stat-value-filtered { -fx-font-size: 12px; -fx-text-fill: -fx-status-filtered; -fx-font-weight: bold; }
+.stat-key-error { -fx-font-size: 11px; -fx-text-fill: -fx-status-error; }
+.stat-value-error { -fx-font-size: 12px; -fx-text-fill: -fx-status-error; -fx-font-weight: bold; }
 
 /* ===================== RESULTS TABLE ===================== */
 .results-panel, .log-panel {

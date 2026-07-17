@@ -76,6 +76,7 @@ public class ScannerController {
     @FXML private Label openPortsLabel;
     @FXML private Label closedPortsLabel;
     @FXML private Label filteredPortsLabel;
+    @FXML private Label errorPortsLabel;
     @FXML private Label durationLabel;
 
     // ---- Table ----
@@ -359,6 +360,7 @@ public class ScannerController {
         openPortsLabel.setText(String.valueOf(stats.getOpenCount()));
         closedPortsLabel.setText(String.valueOf(stats.getClosedCount()));
         filteredPortsLabel.setText(String.valueOf(stats.getFilteredCount()));
+        errorPortsLabel.setText(String.valueOf(stats.getErrorCount()));
         durationLabel.setText(TimerUtil.formatDuration(stats.getScanDurationMillis()));
     }
 
@@ -382,6 +384,7 @@ public class ScannerController {
         openPortsLabel.setText("0");
         closedPortsLabel.setText("0");
         filteredPortsLabel.setText("0");
+        errorPortsLabel.setText("0");
         durationLabel.setText("00:00:00");
         statusPill.getStyleClass().removeAll("status-scanning", "status-complete", "status-stopped");
         statusPill.setText("IDLE");
